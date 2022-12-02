@@ -1,0 +1,12 @@
+.field-label {
+  text-align: start !important;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: center;
+}
+
+.button-small {
+  width: 190px !important;
+}
