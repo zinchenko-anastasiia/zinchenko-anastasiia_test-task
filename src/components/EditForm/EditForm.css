@@ -1,0 +1,35 @@
+.field-label {
+  text-align: start !important;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button-small {
+  width: 190px !important;
+}
+
+.field {
+  margin-bottom: 0px !important;
+}
+
+.wrappers {
+  display: flex;
+  margin-bottom: 34px;
+  gap: 20px;
+  align-items: center;
+}
+
+.inputCustom {
+  width: 276px !important;
+}
+
+.selectCustom {
+  width: 276px !important;
+}
+
+.selectContry {
+  width: auto !important;
+}

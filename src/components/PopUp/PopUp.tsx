@@ -1,20 +1,14 @@
-import "./style.css";
+import "./PopUp.css";
 import "bulma/css/bulma.min.css";
 import edit from "../../icon/mode_24px.svg";
 import remove from "../../icon/delete_24px.svg";
 import save from "../../icon/save.svg"
-import { useEffect, useState } from "react";
 
 interface Props {
   setIsOpen: (value: boolean) => void;
   setIsOpenModal: (value: boolean) => void;
 }
 export const PopUp: React.FC<Props> = ({ setIsOpen, setIsOpenModal }) => {
-  // useEffect(() => {
-  //   document.addEventListener("mousedown", close);
-  // });
-
-  const close = () => setIsOpen(false);
   return (
     <>
       <div className="wrapper">

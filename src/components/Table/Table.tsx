@@ -1,31 +1,23 @@
-import { PopUp } from "./PopUp";
+import { PopUp } from "../PopUp";
 import "bulma/css/bulma.min.css";
-import icon from "../icon/more_vert_24px.svg";
-import { useEffect, useState } from "react";
-import { data } from "../api/data";
-import { Pagination } from "./Pagination/";
-import { useDispatch } from "react-redux";
-import * as usersAction from "../store/slice";
-import { useAppSelector } from "../store/hooks";
-import { Modal } from "../components/Modal";
+import icon from "../../icon/more_vert_24px.svg";
+import { useState } from "react";
+import { Pagination } from "../Pagination";
+import { Modal } from "../Modal";
+import { Users } from "../../store/slice";
+// import './Table.css';
 
-export const Table = () => {
+export const Table: React.FC<Users> = ({ users }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [usersPerPage] = useState(10);
+  const [selectedId, setSelectedId] = useState<number | null>(null);
 
-  const { users } = useAppSelector((state) => state.users);
-
-  const dispatch = useDispatch();
-
-  const handlerClick = () => {
+  const handlerClick = (id:number) => {
     setIsOpen((value) => !value);
+    setSelectedId(id)
   };
-
-  useEffect(() => {
-    dispatch(usersAction.actions.set(data));
-  });
 
   const sortResult = users
     .slice(0)
@@ -56,10 +48,16 @@ export const Table = () => {
         <tbody>
           {currentUsers.map((user) => (
             <>
-              <tr>
+              <tr className="item-with-popup">
                 <th>
+                {(isOpen && selectedId === user.id) && (
+                    <PopUp
+                      setIsOpen={setIsOpen}
+                      setIsOpenModal={setIsOpenModal}
+                    />
+                  )}
                   <span
-                    onClick={handlerClick}
+                    onClick={()=>handlerClick(user.id)}
                     className="js-modal-trigger"
                     style={{ cursor: "pointer" }}
                   >
@@ -84,10 +82,6 @@ export const Table = () => {
         totalUsers={users.length}
         paginate={paginate}
       />
-
-      {isOpen && (
-        <PopUp setIsOpen={setIsOpen} setIsOpenModal={setIsOpenModal} />
-      )}
     </>
   );
 };

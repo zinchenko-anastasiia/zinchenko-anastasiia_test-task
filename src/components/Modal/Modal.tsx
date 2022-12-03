@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { EditForm } from '../../EditForm/EditForm';
+import { EditForm } from '../EditForm/EditForm';
 
 interface Props {
   isOpenModal: boolean;
