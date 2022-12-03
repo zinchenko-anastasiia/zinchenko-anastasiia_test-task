@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/zinchenko-anastasiia_test-task/static/css/main.285c1d8c.css",
-    "main.js": "/zinchenko-anastasiia_test-task/static/js/main.dd34d574.js",
+    "main.css": "/zinchenko-anastasiia_test-task/static/css/main.62353d8a.css",
+    "main.js": "/zinchenko-anastasiia_test-task/static/js/main.d5c62a43.js",
     "index.html": "/zinchenko-anastasiia_test-task/index.html",
     "static/media/mode_24px.svg": "/zinchenko-anastasiia_test-task/static/media/mode_24px.be4b805833024615993b87bb84909702.svg",
     "static/media/save.svg": "/zinchenko-anastasiia_test-task/static/media/save.38b8e4dbe8662ea2c6367093ec8bf1c9.svg",
     "static/media/more_vert_24px.svg": "/zinchenko-anastasiia_test-task/static/media/more_vert_24px.32174fe34cabae4991ae9cbbb397cd9f.svg",
     "static/media/delete_24px.svg": "/zinchenko-anastasiia_test-task/static/media/delete_24px.8dc9351dde387b85fe392a2ec15ee7c7.svg",
-    "main.285c1d8c.css.map": "/zinchenko-anastasiia_test-task/static/css/main.285c1d8c.css.map",
-    "main.dd34d574.js.map": "/zinchenko-anastasiia_test-task/static/js/main.dd34d574.js.map"
+    "main.62353d8a.css.map": "/zinchenko-anastasiia_test-task/static/css/main.62353d8a.css.map",
+    "main.d5c62a43.js.map": "/zinchenko-anastasiia_test-task/static/js/main.d5c62a43.js.map"
   },
   "entrypoints": [
-    "static/css/main.285c1d8c.css",
-    "static/js/main.dd34d574.js"
+    "static/css/main.62353d8a.css",
+    "static/js/main.d5c62a43.js"
   ]
 }
