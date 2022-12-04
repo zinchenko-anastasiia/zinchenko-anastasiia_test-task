@@ -4,7 +4,7 @@
 
 ## About 
 
-This is a user data table with pagination and a modal for editing
+This is a user data table with pagination and a modal for editing.
 
 ### Technology stack:
 + React
