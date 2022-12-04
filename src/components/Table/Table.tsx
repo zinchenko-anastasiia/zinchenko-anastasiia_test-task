@@ -5,7 +5,6 @@ import { useState } from "react";
 import { Pagination } from "../Pagination";
 import { Modal } from "../Modal";
 import { Users } from "../../store/slice";
-// import './Table.css';
 
 export const Table: React.FC<Users> = ({ users }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,9 +13,9 @@ export const Table: React.FC<Users> = ({ users }) => {
   const [usersPerPage] = useState(10);
   const [selectedId, setSelectedId] = useState<number | null>(null);
 
-  const handlerClick = (id:number) => {
+  const handlerClick = (id: number) => {
     setIsOpen((value) => !value);
-    setSelectedId(id)
+    setSelectedId(id);
   };
 
   const sortResult = users
@@ -50,14 +49,14 @@ export const Table: React.FC<Users> = ({ users }) => {
             <>
               <tr className="item-with-popup">
                 <th>
-                {(isOpen && selectedId === user.id) && (
+                  {isOpen && selectedId === user.id && (
                     <PopUp
                       setIsOpen={setIsOpen}
                       setIsOpenModal={setIsOpenModal}
                     />
                   )}
                   <span
-                    onClick={()=>handlerClick(user.id)}
+                    onClick={() => handlerClick(user.id)}
                     className="js-modal-trigger"
                     style={{ cursor: "pointer" }}
                   >

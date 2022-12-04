@@ -1,6 +1,7 @@
 import "bulma/css/bulma.min.css";
 import "./EditForm.css";
 import { useState } from "react";
+import { formatPhoneNumber } from "../../utils/formatPhoneNumber";
 export const EditForm = () => {
   const [name, setName] = useState("");
   const [nameAndLastname, setNameAndLastname] = useState("");
@@ -45,6 +46,17 @@ export const EditForm = () => {
     { id: 3, contry: "PL", code: "48" },
   ];
 
+  const contryCode = contryPhoneCode.find((phone) => phone.contry === contry)?.code;
+
+  const handleInput = (event: string) => {
+    if (!contryCode) {
+      throw new Error("Invalid number!");
+    }
+    const formattedPhoneNumber = formatPhoneNumber(event, contryCode);
+
+    setPhone(formattedPhoneNumber);
+  };
+
   return (
     <>
       <form className="modal-card-body" action="" onSubmit={handleSubmit}>
@@ -84,7 +96,7 @@ export const EditForm = () => {
               <p className="control">
                 <span className="select">
                   <select
-                  className="selectContry"
+                    className="selectContry"
                     value={contry}
                     onChange={(event) => setContry(event.target.value)}
                   >
@@ -99,9 +111,9 @@ export const EditForm = () => {
                   className="input"
                   type="text"
                   placeholder="1 (999) 999-9999"
-                  pattern="([0-9]{3}) [0-9]{3} [0-9]{4}"
+                  pattern="[(][0-9]{3}[)] [0-9]{3}-[0-9]{4}"
                   value={`${phone}`}
-                  onChange={(event) => setPhone(event.target.value)}
+                  onChange={(event) => handleInput(event.target.value)}
                 />
               </p>
             </div>

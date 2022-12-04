@@ -17,13 +17,16 @@ interface Props {
   paginate: (pageNumber: number) => void;
 }
 
-export const Pagination: React.FC<Props> = ({ userPerPage, totalUsers, paginate }) => {
+export const Pagination: React.FC<Props> = ({
+  userPerPage,
+  totalUsers,
+  paginate,
+}) => {
   const pageNumber = [];
 
   for (let i = 1; i <= Math.ceil(totalUsers / userPerPage); i++) {
     pageNumber.push(i);
   }
-
   return (
     <nav
       className="pagination is-centered"
