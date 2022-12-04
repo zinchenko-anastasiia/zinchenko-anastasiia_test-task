@@ -27,6 +27,7 @@ export const Pagination: React.FC<Props> = ({
   for (let i = 1; i <= Math.ceil(totalUsers / userPerPage); i++) {
     pageNumber.push(i);
   }
+  
   return (
     <nav
       className="pagination is-centered"

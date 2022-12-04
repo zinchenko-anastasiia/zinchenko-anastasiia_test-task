@@ -5,17 +5,18 @@ export function formatPhoneNumber(value: string, code: string) {
 
   const phoneNumber = value.replace(/[^\d]/g, "");
   const phoneNumberLength = phoneNumber.length;
+  const start = code.length;
 
   if (phoneNumberLength < 4) {
-    return phoneNumber;
+    return code + ' ' +phoneNumber;
   }
 
-  if (phoneNumberLength < 7) {
-    return `${code}(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3)}`;
-  }
+    if (phoneNumberLength < 7) {
+      return `${phoneNumber.slice(0, start)} (${phoneNumber.slice(start, start+3)}) ${phoneNumber.slice(start+3)}`;
+    }
 
-  return `${code}(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(
-    3,
-    6
-  )}-${phoneNumber.slice(6, 10)}`;
+  return `${phoneNumber.slice(0, start)} (${phoneNumber.slice(start, start+3)}) ${phoneNumber.slice(
+    start+3,
+    start+6
+  )}-${phoneNumber.slice(start+6, start+10)}`;
 }

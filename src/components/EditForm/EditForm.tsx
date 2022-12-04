@@ -2,6 +2,7 @@ import "bulma/css/bulma.min.css";
 import "./EditForm.css";
 import { useState } from "react";
 import { formatPhoneNumber } from "../../utils/formatPhoneNumber";
+
 export const EditForm = () => {
   const [name, setName] = useState("");
   const [nameAndLastname, setNameAndLastname] = useState("");
@@ -46,13 +47,15 @@ export const EditForm = () => {
     { id: 3, contry: "PL", code: "48" },
   ];
 
-  const contryCode = contryPhoneCode.find((phone) => phone.contry === contry)?.code;
+  const contryCode = contryPhoneCode.find(
+    (phone) => phone.contry === contry
+  )?.code;
 
-  const handleInput = (event: string) => {
+  const handleInput = (event: any) => {
     if (!contryCode) {
       throw new Error("Invalid number!");
     }
-    const formattedPhoneNumber = formatPhoneNumber(event, contryCode);
+    const formattedPhoneNumber = formatPhoneNumber(event.target.value, contryCode);
 
     setPhone(formattedPhoneNumber);
   };
@@ -112,8 +115,8 @@ export const EditForm = () => {
                   type="text"
                   placeholder="1 (999) 999-9999"
                   pattern="[(][0-9]{3}[)] [0-9]{3}-[0-9]{4}"
-                  value={`${phone}`}
-                  onChange={(event) => handleInput(event.target.value)}
+                  value={phone}
+                  onChange={(event) => handleInput(event)}
                 />
               </p>
             </div>

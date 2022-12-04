@@ -7,12 +7,12 @@ import { data } from "./api/data";
 
 function App() {
   const { users } = useAppSelector((state) => state.users);
-
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(usersAction.actions.set(data));
   });
+  
   return <Table users={users} />;
 }
 

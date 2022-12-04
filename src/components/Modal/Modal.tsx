@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import { EditForm } from "../EditForm";
+import './Modal.css'
 
 interface Props {
   isOpenModal: boolean;
@@ -17,9 +18,7 @@ export const Modal: React.FC<Props> = ({ isOpenModal, setIsOpenModal }) => {
         >
           <div
             className="modal-background"
-            onClick={() => {
-              setIsOpenModal(false);
-            }}
+            onClick={() => { setIsOpenModal(false)}}
           ></div>
           <div className="modal-card">
             <header className="modal-card-head">

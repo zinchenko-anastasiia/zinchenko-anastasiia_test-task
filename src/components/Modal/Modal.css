@@ -1,0 +1,7 @@
+.modal-card-body {
+  display: flex !important;
+  flex-direction: column !important;
+  align-content: center !important;
+  justify-content: flex-start !important;
+  align-items: flex-end !important;
+}

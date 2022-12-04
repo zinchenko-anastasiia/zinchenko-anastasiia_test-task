@@ -8,6 +8,7 @@ interface Props {
   setIsOpen: (value: boolean) => void;
   setIsOpenModal: (value: boolean) => void;
 }
+
 export const PopUp: React.FC<Props> = ({ setIsOpen, setIsOpenModal }) => {
   return (
     <>

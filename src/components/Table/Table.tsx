@@ -22,7 +22,8 @@ export const Table: React.FC<Users> = ({ users }) => {
     .slice(0)
     .sort(
       (a, b) =>
-        a.createAt.localeCompare(b.createAt) || a.time.localeCompare(b.time)
+        a.createAt.localeCompare(b.createAt) 
+        || a.time.localeCompare(b.time)
     );
 
   const indexOfLastUser = currentPage * usersPerPage;
